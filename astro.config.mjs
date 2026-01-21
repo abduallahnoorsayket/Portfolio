@@ -2,8 +2,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://abduallahnoorsayket.github.io",
-  base: "/MyPortfolio", // Correct for username.github.io
+  site: "https://abdullahsayketportfolio.netlify.app",
   trailingSlash: "always", // Helps with GitHub Pages routing
   build: {
     format: "directory", // Ensures /work becomes /work/index.html
