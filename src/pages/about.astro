@@ -1,0 +1,154 @@
+---
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/Abduallh_at_work.png";
+---
+
+<BaseLayout
+  title="About | MD. Abdullah Sayket"
+  description="About MD. Abdullah Sayket Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+      >
+        <Image
+          src={heroImage}
+          alt="MD. Abdullah Sayket at work with a colleague"
+          format="png"
+          width="1553"
+          height="873"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="content">
+          <p>Apr. 2024 to December 2025</p>
+          <h5 class="company-name">
+            NEOCOSMO GmbH ,Science Park 2,Saarbrücken, Germany (Remote)
+          </h5>
+          <p>Software Engineer (Drupal 10 (PHP) + Vue.js) <br />Remote</p>
+          <br />
+          <p>Jan. 2024 to Mar. 2024</p>
+          <h5 class="company-name">Dhaka Popular Travels Ltd</h5>
+          <p>Front-end Developer<br />On-site</p>
+          <br />
+          <p>Feb. 2020 to Dec. 2023</p>
+          <h5 class="company-name">Cloud Produciton LTD.</h5>
+          <p>Software Developer<br />On-site</p>
+          <br />
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>Sept. 2014 to April 2019</p>
+          <h5 class="company-name">
+            BSc. in C.S.E at East West university.(CGPA-3.24/4.00)
+          </h5>
+          <p>Dhaka, Bangladesh</p>
+          <br />
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content">
+          <div class="front-end-skills">
+            <h5 class="company-name">Front-end</h5>
+            <p>
+              Vue.js, Nuxt.js, React.js, Tailwind, SCSS, JavaScript (ES6+),Vuex,
+              Pinia
+            </p>
+          </div>
+          <div class="back-end-skills">
+            <h5 class="company-name">Backend</h5>
+            <p>PHP,Django, REST APIs, MVC/MVT,MySQL,MariaDB</p>
+          </div>
+          <div class="drupal-skills">
+            <h5 class="company-name">Drupal</h5>
+            <p>
+              Drupal 10, Views, Custom Modules, Twig, Gutenberg, Layout
+              Builder,Hooks
+            </p>
+          </div>
+          <div class="tools">
+            <h5 class="company-name">Tools</h5>
+            <p>Docker, Git, Jira, Figma, Agile/Scrum</p>
+          </div>
+          <div class="others">
+            <h5 class="company-name">Other</h5>
+            <p>
+              Accessibility (WCAG), Multilingual CMS, Performance Optimization,
+              WordPress
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
