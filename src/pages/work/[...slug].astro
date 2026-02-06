@@ -1,11 +1,10 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import { Image } from "astro:assets";
-
 import ContactCTA from "../../components/ContactCTA.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 import Pill from "../../components/Pill.astro";
+import ProjectImage from "../../components/ProjectImage.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 interface Props {
@@ -47,10 +46,9 @@ const { Content } = await render(entry);
         <div class="stack gap-10 content">
           {
             entry.data.img && (
-              <Image
+              <ProjectImage
                 src={entry.data.img}
                 alt={entry.data.img_alt || ""}
-                quality="high"
               />
             )
           }

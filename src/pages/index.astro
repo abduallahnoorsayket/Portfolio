@@ -9,6 +9,7 @@ import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ProjectImage from "../components/ProjectImage.astro";
 import Skills from "../components/Skills.astro";
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -118,7 +119,7 @@ const brands = [
             {
               brands.map((brand) => (
                 <li class="mention-card">
-                  <Image src={brand.img} alt={brand.name} format="png" />
+                  <ProjectImage src={brand.img} alt={brand.name} />
                 </li>
               ))
             }
@@ -260,21 +261,6 @@ const brands = [
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: var(--gradient-subtle);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .mention-card {
-    height: auto !important;
-    background: var(--gradient-subtle);
-    box-shadow: var(--shadow-sm);
-  }
-  .mention-card img {
-    background: var(--gradient-subtle);
-    box-shadow: var(--shadow-sm);
-    border-radius: 1.5rem;
-    height: 100% !important;
-    object-fit: cover;
   }
   @media (min-width: 50em) {
     .mention-card {
